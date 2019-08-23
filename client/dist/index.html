@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <title>Document</title>
+    </head>
+    <body>
+        <button id="btn1">请求服务器接口1</button>
+        <button id="btn2">请求服务器接口2</button>
+        <script src="https://cdn.bootcss.com/axios/0.19.0/axios.min.js"></script>
+        <script>
+            document.getElementById('btn1').addEventListener(
+                'click',
+                () => {
+                    axios.get('/api/hello', {
+                        params: {
+                            key: 'hello'
+                        }
+                    });
+                },
+                false
+            );
+
+            document.getElementById('btn2').addEventListener(
+                'click',
+                () => {
+                    axios.get('/api/word', {
+                        params: {
+                            key: 'word'
+                        }
+                    });
+                },
+                false
+            );
+        </script>
+    </body>
+</html>
